@@ -1,0 +1,28 @@
+<%- include partials/header.ejs%>
+
+
+<h1>Various Products</h1>
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col-sm-4" style = "display: flex">
+        <% for ( var i = 0; i<productsData.length; i++){ %>
+                <div class="media">
+                        <img src="<%=productsData[i].image%>" class="mr-3" alt="<%= productsData[i].name %>">
+                        <div class="media-body">
+                          <h5 class="mt-0"><%= productsData[i].name %></h5>
+                          product no. 1
+                          <h5 class="mt-0"><%= productsData[i].votes %></h5>
+                          <form method = 'POST' action = '/product/delete/<%= i %>'>
+                          <button class = "btn btn-danger" name = 'name'>Remove</button>
+                        </form>
+                        </div>
+                      </div>
+            
+            
+            <% } %>
+    </div>
+</div>
+</div>
+
+<%- include partials/footer.ejs%>
